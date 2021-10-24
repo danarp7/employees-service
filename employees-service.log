@@ -1,0 +1,31 @@
+2021-10-25 01:39:24.308  INFO 19272 --- [main] c.employees.EmployeesServiceApplication  : Starting EmployeesServiceApplication using Java 1.8.0_162 on DESKTOP-Q60SP3T with PID 19272 (C:\Users\Rizky\Documents\My Data\Data Rizky\Belajar\Belajar Pemrograman\Java\Technical Test AstraLife\employees-service\target\classes started by Rizky in C:\Users\Rizky\Documents\My Data\Data Rizky\Belajar\Belajar Pemrograman\Java\Technical Test AstraLife\employees-service)
+2021-10-25 01:39:24.318  INFO 19272 --- [main] c.employees.EmployeesServiceApplication  : No active profile set, falling back to default profiles: default
+2021-10-25 01:39:26.265  INFO 19272 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-10-25 01:39:26.539  INFO 19272 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 254 ms. Found 6 JPA repository interfaces.
+2021-10-25 01:39:28.491  INFO 19272 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-10-25 01:39:28.527  INFO 19272 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-25 01:39:28.528  INFO 19272 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-10-25 01:39:28.868  INFO 19272 --- [main] o.a.c.c.C.[.[.[/employees-service]       : Initializing Spring embedded WebApplicationContext
+2021-10-25 01:39:28.869  INFO 19272 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4447 ms
+2021-10-25 01:39:29.173  INFO 19272 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-10-25 01:39:29.288  INFO 19272 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-10-25 01:39:29.590  INFO 19272 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-10-25 01:39:29.821  INFO 19272 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-10-25 01:39:29.830  WARN 19272 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2021-10-25 01:39:31.366  INFO 19272 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-10-25 01:39:31.413  INFO 19272 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2021-10-25 01:39:33.065  INFO 19272 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-10-25 01:39:33.083  INFO 19272 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-10-25 01:39:34.348  WARN 19272 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-10-25 01:39:36.714  INFO 19272 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/employees-service'
+2021-10-25 01:39:36.729  INFO 19272 --- [main] c.employees.EmployeesServiceApplication  : Started EmployeesServiceApplication in 13.622 seconds (JVM running for 14.582)
+2021-10-25 01:39:51.689  INFO 19272 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/employees-service]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-10-25 01:39:51.690  INFO 19272 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-10-25 01:39:51.693  INFO 19272 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-10-25 01:40:59.633  INFO 1112 --- [main] c.employees.EmployeesServiceApplication  : Starting EmployeesServiceApplication using Java 1.8.0_162 on DESKTOP-Q60SP3T with PID 1112 (C:\Users\Rizky\Documents\My Data\Data Rizky\Belajar\Belajar Pemrograman\Java\Technical Test AstraLife\employees-service\target\classes started by Rizky in C:\Users\Rizky\Documents\My Data\Data Rizky\Belajar\Belajar Pemrograman\Java\Technical Test AstraLife\employees-service)
+2021-10-25 01:40:59.638  INFO 1112 --- [main] c.employees.EmployeesServiceApplication  : No active profile set, falling back to default profiles: default
+2021-10-25 01:41:01.587  INFO 1112 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-10-25 01:41:01.857  INFO 1112 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 249 ms. Found 6 JPA repository interfaces.
+2021-10-25 01:41:03.793  INFO 1112 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-10-25 01:41:03.818  INFO 1112 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-25 01:41:03.819  INFO 1112 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
