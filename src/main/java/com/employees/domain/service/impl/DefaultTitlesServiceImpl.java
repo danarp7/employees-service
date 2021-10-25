@@ -39,6 +39,13 @@ public class DefaultTitlesServiceImpl implements TitlesService {
     }
 
     @Override
+    public List<TitlesEntity> findByEmpNo(Integer empNo) {
+        employeesService.findById(empNo);
+        return titlesRepository.findByEmpNo(empNo)
+                .orElseThrow(() -> new DataNotFoundException("database is empty"));
+    }
+
+    @Override
     public void create(TitlesRequestDto data) {
         EmployeesEntity employeesEntity = employeesService.findById(data.getEmpNo());
 

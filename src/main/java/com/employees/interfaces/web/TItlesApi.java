@@ -41,4 +41,8 @@ public interface TItlesApi {
             @PathVariable Integer empNo, @PathVariable String title,
             @PathVariable @DateTimeFormat(pattern = "yyyy-MM-dd") Date fromDate);
 
+    @Operation(summary = "Get titles by emp no")
+    @GetMapping("/employees/{empNo}")
+    ResponseEntity<EmployeesResponse<List<TitlesEntity>>> getByEmpNo(@PathVariable Integer empNo);
+
 }

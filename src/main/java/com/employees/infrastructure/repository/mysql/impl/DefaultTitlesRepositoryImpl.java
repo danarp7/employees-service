@@ -33,6 +33,17 @@ public class DefaultTitlesRepositoryImpl implements TitlesRepository {
     }
 
     @Override
+    public Optional<List<TitlesEntity>> findByEmpNo(Integer empNo) {
+        List<TitlesEntity> data = repository.findByTitlesIdEmployeesEntityEmpNo(empNo);
+
+        if (data.isEmpty()) {
+            return Optional.empty();
+        }
+
+        return Optional.of(data);
+    }
+
+    @Override
     public void save(TitlesEntity data) {
         repository.save(data);
     }

@@ -65,4 +65,13 @@ public class TitlesController implements TItlesApi {
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
+    @Override
+    public ResponseEntity<EmployeesResponse<List<TitlesEntity>>> getByEmpNo(Integer empNo) {
+
+        List<TitlesEntity> data = titlesService.findByEmpNo(empNo);
+
+        EmployeesResponse response = EmployeesResponse.success(data);
+        return ResponseEntity.status(HttpStatus.OK).body(response);
+    }
+
 }
