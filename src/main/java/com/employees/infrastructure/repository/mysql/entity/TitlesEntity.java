@@ -1,5 +1,6 @@
 package com.employees.infrastructure.repository.mysql.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,6 +23,7 @@ public class TitlesEntity implements Serializable {
 
     @Temporal(TemporalType.DATE)
     @Column(name = "to_date")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date toDate;
 
 }

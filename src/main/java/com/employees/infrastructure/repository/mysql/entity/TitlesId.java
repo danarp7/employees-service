@@ -1,5 +1,7 @@
 package com.employees.infrastructure.repository.mysql.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,7 +22,8 @@ public class TitlesId implements Serializable {
 
     private static final long serialVersionUID = 7020422377059056733L;
 
-    @ManyToOne
+    @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "emp_no")
     @OnDelete(action = OnDeleteAction.CASCADE)
     private EmployeesEntity employeesEntity;
@@ -32,5 +35,6 @@ public class TitlesId implements Serializable {
     @Temporal(TemporalType.DATE)
     @Column(name = "from_date")
     @NotNull(message = "fromDate is mandatory")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date fromDate;
 }

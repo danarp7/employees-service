@@ -1,5 +1,6 @@
 package com.employees.infrastructure.repository.mysql.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -24,10 +25,12 @@ public class DeptEmpEntity implements Serializable {
     @Temporal(TemporalType.DATE)
     @Column(name = "from_date", nullable = false)
     @NotNull(message = "fromDate is mandatory")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date fromDate;
 
     @Temporal(TemporalType.DATE)
     @Column(name = "to_date")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date toDate;
 
 }

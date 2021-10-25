@@ -1,6 +1,7 @@
 package com.employees.infrastructure.repository.mysql.entity;
 
 import com.employees.domain.model.value.EmployeesGender;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -29,6 +30,7 @@ public class EmployeesEntity implements Serializable {
     @Temporal(TemporalType.DATE)
     @Column(name = "birth_date", nullable = false)
     @NotNull(message = "birthDate is mandatory")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date birthDate;
 
     @Column(name = "first_name", length = 14, nullable = false)
@@ -48,5 +50,6 @@ public class EmployeesEntity implements Serializable {
     @Temporal(TemporalType.DATE)
     @Column(name = "hire_date", nullable = false)
     @NotNull(message = "hireDate is mandatory")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date hireDate;
 }

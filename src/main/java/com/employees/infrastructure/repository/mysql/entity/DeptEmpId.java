@@ -1,5 +1,6 @@
 package com.employees.infrastructure.repository.mysql.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,12 +18,14 @@ public class DeptEmpId implements Serializable {
 
     private static final long serialVersionUID = -2248691188262354402L;
 
-    @ManyToOne
+    @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "emp_no")
     @OnDelete(action = OnDeleteAction.CASCADE)
     private EmployeesEntity employeesEntity;
 
-    @ManyToOne
+    @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "dept_no")
     @OnDelete(action = OnDeleteAction.CASCADE)
     private DepartmentsEntity departmentsEntity;
