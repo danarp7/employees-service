@@ -68,7 +68,6 @@ public class EmployeesController implements EmployeesApi {
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
-
     @Override
     public ResponseEntity<EmployeesResponse<EmployeesEntity>> getById(Integer empNo) {
 

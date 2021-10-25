@@ -62,7 +62,6 @@ public class DepartmentsController implements DepartmentsApi {
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
-
     @Override
     public ResponseEntity<EmployeesResponse<DepartmentsEntity>> getById(String deptNo) {
 
