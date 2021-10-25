@@ -8,3 +8,4 @@ How to run :
 4. run in cmd dir employees-service -> mvn clean package -DskipTests
 5. run in cmd dir employees-service -> java -jar target/employees-service-0.0.1-SNAPSHOT.jar
 6. open api doc -> http://localhost:8080/employees-service/swagger-ui.html
+7. import employees-service-test-api.postman_collection.json for example api testing using postman -> https://www.postman.com/downloads/
