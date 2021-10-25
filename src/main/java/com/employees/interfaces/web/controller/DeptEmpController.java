@@ -64,4 +64,22 @@ public class DeptEmpController implements DeptEmpApi {
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
+    @Override
+    public ResponseEntity<EmployeesResponse<List<DeptEmpEntity>>> getByEmpNo(Integer empNo) {
+
+        List<DeptEmpEntity> data = deptEmpService.findByEmpNo(empNo);
+
+        EmployeesResponse response = EmployeesResponse.success(data);
+        return ResponseEntity.status(HttpStatus.OK).body(response);
+    }
+
+    @Override
+    public ResponseEntity<EmployeesResponse<List<DeptEmpEntity>>> getByDeptNo(String deptNo) {
+
+        List<DeptEmpEntity> data = deptEmpService.findByDeptNo(deptNo);
+
+        EmployeesResponse response = EmployeesResponse.success(data);
+        return ResponseEntity.status(HttpStatus.OK).body(response);
+    }
+
 }

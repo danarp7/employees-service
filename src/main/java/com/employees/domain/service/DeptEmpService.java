@@ -8,6 +8,11 @@ import java.util.List;
 public interface DeptEmpService {
     List<DeptEmpEntity> findAll();
     DeptEmpEntity findById(Integer empNo, String deptNo);
+
+    List<DeptEmpEntity> findByEmpNo(Integer empNo);
+
+    List<DeptEmpEntity> findByDeptNo(String deptNo);
+
     void create(DeptEmpRequestDto data);
     void update(DeptEmpRequestDto data);
     void delete(Integer empNo, String deptNo);

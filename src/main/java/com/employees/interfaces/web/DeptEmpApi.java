@@ -35,4 +35,12 @@ public interface DeptEmpApi {
     @GetMapping("/employees/{empNo}/departments/{deptNo}")
     ResponseEntity<EmployeesResponse<DeptEmpEntity>> getById(@PathVariable Integer empNo, @PathVariable String deptNo);
 
+    @Operation(summary = "Get dept emp by emp no")
+    @GetMapping("/employees/{empNo}")
+    ResponseEntity<EmployeesResponse<List<DeptEmpEntity>>> getByEmpNo(@PathVariable Integer empNo);
+
+    @Operation(summary = "Get dept emp by dept no")
+    @GetMapping("/departments/{deptNo}")
+    ResponseEntity<EmployeesResponse<List<DeptEmpEntity>>> getByDeptNo(@PathVariable String deptNo);
+
 }

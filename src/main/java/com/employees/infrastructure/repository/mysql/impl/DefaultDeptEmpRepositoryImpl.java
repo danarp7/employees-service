@@ -33,6 +33,28 @@ public class DefaultDeptEmpRepositoryImpl implements DeptEmpRepository {
     }
 
     @Override
+    public Optional<List<DeptEmpEntity>> findByEmpNo(Integer empNo) {
+        List<DeptEmpEntity> data = repository.findByDeptEmpIdEmployeesEntityEmpNo(empNo);
+
+        if (data.isEmpty()) {
+            return Optional.empty();
+        }
+
+        return Optional.of(data);
+    }
+
+    @Override
+    public Optional<List<DeptEmpEntity>> findByDeptNo(String deptNo) {
+        List<DeptEmpEntity> data = repository.findByDeptEmpIdDepartmentsEntityDeptNo(deptNo);
+
+        if (data.isEmpty()) {
+            return Optional.empty();
+        }
+
+        return Optional.of(data);
+    }
+
+    @Override
     public void save(DeptEmpEntity data) {
         repository.save(data);
     }

@@ -9,6 +9,8 @@ import java.util.Optional;
 public interface DeptEmpRepository {
     Optional<List<DeptEmpEntity>> findAll();
     Optional<DeptEmpEntity> findById(DeptEmpId deptEmpId);
+    Optional<List<DeptEmpEntity>> findByEmpNo(Integer empNo);
+    Optional<List<DeptEmpEntity>> findByDeptNo(String deptNo);
     void save(DeptEmpEntity data);
     void deleteById(DeptEmpId deptEmpId);
 }

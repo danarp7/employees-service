@@ -47,6 +47,20 @@ public class DefaultDeptEmpServiceImpl implements DeptEmpService {
     }
 
     @Override
+    public List<DeptEmpEntity> findByEmpNo(Integer empNo) {
+        employeesService.findById(empNo);
+        return deptEmpRepository.findByEmpNo(empNo)
+                .orElseThrow(() -> new DataNotFoundException("database is empty"));
+    }
+
+    @Override
+    public List<DeptEmpEntity> findByDeptNo(String deptNo) {
+        departmentsService.findById(deptNo);
+        return deptEmpRepository.findByDeptNo(deptNo)
+                .orElseThrow(() -> new DataNotFoundException("database is empty"));
+    }
+
+    @Override
     public void create(DeptEmpRequestDto data) {
         EmployeesEntity employeesEntity = employeesService.findById(data.getEmpNo());
         DepartmentsEntity departmentsEntity = departmentsService.findById(data.getDeptNo());
