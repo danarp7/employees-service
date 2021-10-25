@@ -42,7 +42,7 @@ public class DefaultTitlesServiceImpl implements TitlesService {
     public List<TitlesEntity> findByEmpNo(Integer empNo) {
         employeesService.findById(empNo);
         return titlesRepository.findByEmpNo(empNo)
-                .orElseThrow(() -> new DataNotFoundException("database is empty"));
+                .orElseThrow(() -> new DataNotFoundException("emp no " + empNo));
     }
 
     @Override

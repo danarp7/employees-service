@@ -44,14 +44,14 @@ public class DefaultDeptManagerServiceImpl implements DeptManagerService {
     public List<DeptManagerEntity> findByEmpNo(Integer empNo) {
         employeesService.findById(empNo);
         return deptManagerRepository.findByEmpNo(empNo)
-                .orElseThrow(() -> new DataNotFoundException("database is empty"));
+                .orElseThrow(() -> new DataNotFoundException("emp no " + empNo));
     }
 
     @Override
     public List<DeptManagerEntity> findByDeptNo(String deptNo) {
         departmentsService.findById(deptNo);
         return deptManagerRepository.findByDeptNo(deptNo)
-                .orElseThrow(() -> new DataNotFoundException("database is empty"));
+                .orElseThrow(() -> new DataNotFoundException("dept no " + deptNo));
     }
 
     @Override

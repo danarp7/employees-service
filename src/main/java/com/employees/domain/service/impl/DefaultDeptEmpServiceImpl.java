@@ -50,14 +50,14 @@ public class DefaultDeptEmpServiceImpl implements DeptEmpService {
     public List<DeptEmpEntity> findByEmpNo(Integer empNo) {
         employeesService.findById(empNo);
         return deptEmpRepository.findByEmpNo(empNo)
-                .orElseThrow(() -> new DataNotFoundException("database is empty"));
+                .orElseThrow(() -> new DataNotFoundException("emp no " + empNo));
     }
 
     @Override
     public List<DeptEmpEntity> findByDeptNo(String deptNo) {
         departmentsService.findById(deptNo);
         return deptEmpRepository.findByDeptNo(deptNo)
-                .orElseThrow(() -> new DataNotFoundException("database is empty"));
+                .orElseThrow(() -> new DataNotFoundException("dept no " + deptNo));
     }
 
     @Override

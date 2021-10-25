@@ -41,7 +41,7 @@ public class DefaultSalariesServiceImpl implements SalariesService {
     public List<SalariesEntity> findByEmpNo(Integer empNo) {
         employeesService.findById(empNo);
         return salariesRepository.findByEmpNo(empNo)
-                .orElseThrow(() -> new DataNotFoundException("database is empty"));
+                .orElseThrow(() -> new DataNotFoundException("emp no " + empNo));
     }
 
     @Override
