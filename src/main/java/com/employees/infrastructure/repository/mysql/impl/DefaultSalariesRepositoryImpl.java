@@ -33,6 +33,17 @@ public class DefaultSalariesRepositoryImpl implements SalariesRepository {
     }
 
     @Override
+    public Optional<List<SalariesEntity>> findByEmpNo(Integer empNo) {
+        List<SalariesEntity> data = repository.findBySalariesIdEmployeesEntityEmpNo(empNo);
+
+        if (data.isEmpty()) {
+            return Optional.empty();
+        }
+
+        return Optional.of(data);
+    }
+
+    @Override
     public void save(SalariesEntity data) {
         repository.save(data);
     }

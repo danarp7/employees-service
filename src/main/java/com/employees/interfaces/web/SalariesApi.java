@@ -39,4 +39,8 @@ public interface SalariesApi {
     ResponseEntity<EmployeesResponse<SalariesEntity>> getById(
             @PathVariable Integer empNo, @PathVariable @DateTimeFormat(pattern = "yyyy-MM-dd") Date fromDate);
 
+    @Operation(summary = "Get salaries by emp no")
+    @GetMapping("/employees/{empNo}")
+    ResponseEntity<EmployeesResponse<List<SalariesEntity>>> getByEmpNo(@PathVariable Integer empNo);
+
 }

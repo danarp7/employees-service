@@ -9,6 +9,7 @@ import java.util.Optional;
 public interface SalariesRepository {
     Optional<List<SalariesEntity>> findAll();
     Optional<SalariesEntity> findById(SalariesId salariesId);
+    Optional<List<SalariesEntity>> findByEmpNo(Integer empNo);
     void save(SalariesEntity data);
     void deleteById(SalariesId salariesId);
 }

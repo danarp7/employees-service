@@ -38,6 +38,13 @@ public class DefaultSalariesServiceImpl implements SalariesService {
     }
 
     @Override
+    public List<SalariesEntity> findByEmpNo(Integer empNo) {
+        employeesService.findById(empNo);
+        return salariesRepository.findByEmpNo(empNo)
+                .orElseThrow(() -> new DataNotFoundException("database is empty"));
+    }
+
+    @Override
     public void create(SalariesRequestDto data) {
         EmployeesEntity employeesEntity = employeesService.findById(data.getEmpNo());
 

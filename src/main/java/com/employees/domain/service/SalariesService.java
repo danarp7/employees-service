@@ -9,6 +9,7 @@ import java.util.List;
 public interface SalariesService {
     List<SalariesEntity> findAll();
     SalariesEntity findById(Integer empNo, Date fromDate);
+    List<SalariesEntity> findByEmpNo(Integer empNo);
     void create(SalariesRequestDto data);
     void update(SalariesRequestDto data);
     void delete(Integer empNo, Date fromDate);

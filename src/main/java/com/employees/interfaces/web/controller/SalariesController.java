@@ -55,11 +55,19 @@ public class SalariesController implements SalariesApi {
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
-
     @Override
     public ResponseEntity<EmployeesResponse<SalariesEntity>> getById(Integer empNo, Date fromDate) {
 
         SalariesEntity data = salariesService.findById(empNo, fromDate);
+
+        EmployeesResponse response = EmployeesResponse.success(data);
+        return ResponseEntity.status(HttpStatus.OK).body(response);
+    }
+
+    @Override
+    public ResponseEntity<EmployeesResponse<List<SalariesEntity>>> getByEmpNo(Integer empNo) {
+
+        List<SalariesEntity> data = salariesService.findByEmpNo(empNo);
 
         EmployeesResponse response = EmployeesResponse.success(data);
         return ResponseEntity.status(HttpStatus.OK).body(response);
