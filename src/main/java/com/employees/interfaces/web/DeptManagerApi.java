@@ -36,4 +36,12 @@ public interface DeptManagerApi {
     ResponseEntity<EmployeesResponse<DeptManagerEntity>> getById(
             @PathVariable String deptNo, @PathVariable Integer empNo);
 
+    @Operation(summary = "Get dept manager by emp no")
+    @GetMapping("/employees/{empNo}")
+    ResponseEntity<EmployeesResponse<List<DeptManagerEntity>>> getByEmpNo(@PathVariable Integer empNo);
+
+    @Operation(summary = "Get dept manager by dept no")
+    @GetMapping("/departments/{deptNo}")
+    ResponseEntity<EmployeesResponse<List<DeptManagerEntity>>> getByDeptNo(@PathVariable String deptNo);
+
 }

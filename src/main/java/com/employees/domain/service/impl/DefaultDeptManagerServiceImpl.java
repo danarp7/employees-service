@@ -7,13 +7,11 @@ import com.employees.domain.service.DepartmentsService;
 import com.employees.domain.service.DeptManagerService;
 import com.employees.domain.service.EmployeesService;
 import com.employees.infrastructure.repository.mysql.entity.*;
-import com.employees.interfaces.web.dto.DeptEmpRequestDto;
 import com.employees.interfaces.web.dto.DeptManagerRequestDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class DefaultDeptManagerServiceImpl implements DeptManagerService {
@@ -39,6 +37,20 @@ public class DefaultDeptManagerServiceImpl implements DeptManagerService {
     @Override
     public List<DeptManagerEntity> findAll() {
         return deptManagerRepository.findAll()
+                .orElseThrow(() -> new DataNotFoundException("database is empty"));
+    }
+
+    @Override
+    public List<DeptManagerEntity> findByEmpNo(Integer empNo) {
+        employeesService.findById(empNo);
+        return deptManagerRepository.findByEmpNo(empNo)
+                .orElseThrow(() -> new DataNotFoundException("database is empty"));
+    }
+
+    @Override
+    public List<DeptManagerEntity> findByDeptNo(String deptNo) {
+        departmentsService.findById(deptNo);
+        return deptManagerRepository.findByDeptNo(deptNo)
                 .orElseThrow(() -> new DataNotFoundException("database is empty"));
     }
 
